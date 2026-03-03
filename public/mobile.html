@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>新增留言 | 我聽見的世界</title>
     <link rel="stylesheet" href="./mobile.css">
+    <style>
+        /* 1. 在這裡宣告辰宇落雁體 */
+        @font-face {
+            font-family: "ChenYuluoyan";
+            src: url('./assets/ChenYuluoyan-Thin-Monospaced.ttf') format('truetype');
+        }
+
+        /* 2. 強制把留言框換成這個字型 */
+        .note-input {
+            font-family: "ChenYuluoyan", sans-serif !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +26,8 @@
         <!-- Screen 1: Welcome -->
         <div id="screen1" class="screen active" style="background-image: url('./assets/bg1.png');">
             <!-- Transparent clickable area to go to IG link -->
-            <a id="btn-ig" href="https://www.instagram.com/" target="_blank" class="clickable-area ig-btn"></a>
+            <a id="btn-ig" href="https://www.instagram.com/the.world.i.hear_40?igsh=MWhqdGxkcjNnOWVzaw=="
+                target="_blank" class="clickable-area ig-btn"></a>
             <!-- Transparent clickable area to go to Screen 2 -->
             <div id="btn-start" class="clickable-area start-btn"></div>
         </div>
