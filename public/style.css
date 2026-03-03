@@ -1,0 +1,171 @@
+:root {
+  --bg: #121212;
+  --wall-bg: #1b1f2a;
+  --note-bg: #ffe680;
+  --note-text: #202020;
+  --panel-bg: #ffffff;
+  --panel-text: #222222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'ChenYuluoyan';
+  src: url('./assets/ChenYuluoyan-Thin-Monospaced.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "DFKai-SB", "Microsoft JhengHei", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: #fff;
+  /* Ensure full background is black */
+  background-color: #000;
+}
+
+.wall-wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.2rem;
+}
+
+.wall {
+  position: relative;
+  width: min(100vw, calc(100vh * 1200 / 225));
+  aspect-ratio: 1200 / 225;
+  background: #000;
+  /* User requested pure black background */
+  overflow: hidden;
+}
+
+.note {
+  position: absolute;
+  width: 6.5%;
+  /* Adjust to realistic sticky note width */
+  min-height: 34%;
+  /* Allow height to stretch instead of forcing 1:1 square */
+  background: var(--note-bg);
+  color: var(--note-text);
+  padding: 1.2rem;
+  /* Give text more breathing room */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.35;
+  font-family: 'ChenYuluoyan', sans-serif;
+  /* Apply the custom font */
+  font-size: clamp(14px, 1.5vw, 32px);
+  /* Slightly larger font size for the custom font style */
+  word-break: break-word;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  /* Make it look more like a physical note */
+  border-bottom-right-radius: 60px 5px;
+  /* Slight curl effect */
+  opacity: 0;
+  transform: scale(0.7) rotate(0deg);
+  animation: note-in 480ms ease-out forwards;
+}
+
+.note.removing {
+  animation: note-out 450ms ease-in forwards;
+}
+
+@keyframes note-in {
+  from {
+    opacity: 0;
+    transform: scale(0.65) rotate(var(--rotation));
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--rotation));
+  }
+}
+
+@keyframes note-out {
+  from {
+    opacity: 1;
+    transform: scale(1) rotate(var(--rotation));
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.8) rotate(var(--rotation));
+  }
+}
+
+.admin {
+  max-width: 880px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--panel-bg);
+  color: var(--panel-text);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin h1,
+.admin h2 {
+  margin-top: 0;
+}
+
+.admin textarea {
+  width: 100%;
+  min-height: 92px;
+  resize: vertical;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.admin button,
+.admin a.button-link {
+  border: none;
+  background: #2f63ff;
+  color: white;
+  padding: 0.58rem 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.admin button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 1.5em;
+  margin-top: 0.5rem;
+}
+
+.notes-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.notes-list li {
+  margin-bottom: 0.35rem;
+}

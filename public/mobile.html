@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>新增留言 | 我聽見的世界</title>
+    <link rel="stylesheet" href="./mobile.css">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <!-- Screen 1: Welcome -->
+        <div id="screen1" class="screen active" style="background-image: url('./assets/bg1.png');">
+            <!-- Transparent clickable area to go to IG link -->
+            <a id="btn-ig" href="https://www.instagram.com/" target="_blank" class="clickable-area ig-btn"></a>
+            <!-- Transparent clickable area to go to Screen 2 -->
+            <div id="btn-start" class="clickable-area start-btn"></div>
+        </div>
+
+        <!-- Screen 2: Input -->
+        <div id="screen2" class="screen" style="background-image: url('./assets/bg2.png');">
+            <div class="form-container">
+                <!-- Textarea overlapping the visual text box in the image -->
+                <textarea id="note-input" class="note-input" placeholder="寫下你想說的話..."></textarea>
+            </div>
+            <!-- Transparent clickable area over the Submit button -->
+            <button id="btn-submit" class="clickable-area submit-btn">
+                <span class="loading-spinner hidden" id="loading"></span>
+            </button>
+
+            <!-- Transparent clickable area to go to Screen 1 -->
+            <div id="btn-back-1" class="clickable-area back-btn-2"></div>
+        </div>
+
+        <!-- Screen 3: Success -->
+        <div id="screen3" class="screen" style="background-image: url('./assets/bg3.png');">
+            <!-- Transparent clickable area to return to Home -->
+            <div id="btn-back-home" class="clickable-area home-btn"></div>
+        </div>
+
+    </div>
+
+    <script src="./mobile.js"></script>
+</body>
+
+</html>
