@@ -103,7 +103,7 @@ function addNoteToWall(note) {
   removeOldestIfNeeded();
 }
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxL69GFDI-vuus5Q-YunnWDaMgHT8i1GN2ShGjXHbg8np-LkOBkuJavMB9nuOyBemOe/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzTRszzMdzJ22uF4zHgKumhvSK5W_wuCWVMg2rR7df3WlP_GDnZH7k9m-yjcevW7eAI/exec';
 
 async function fetchNotes() {
   const res = await fetch(SCRIPT_URL, { cache: 'no-store' });

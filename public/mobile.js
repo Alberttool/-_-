@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnSubmit.disabled = true;
 
         try {
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxL69GFDI-vuus5Q-YunnWDaMgHT8i1GN2ShGjXHbg8np-LkOBkuJavMB9nuOyBemOe/exec';
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzTRszzMdzJ22uF4zHgKumhvSK5W_wuCWVMg2rR7df3WlP_GDnZH7k9m-yjcevW7eAI/exec';
             const response = await fetch(SCRIPT_URL, {
                 method: 'POST',
                 headers: {
