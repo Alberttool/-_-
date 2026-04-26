@@ -9,7 +9,7 @@ You can run this project locally using one of the following methods:
 **Method 1: Live Server (VS Code)**
 1. Open this folder in VS Code.
 2. Install the **Live Server** extension.
-3. Right-click on `public/index.html` (or `mobile.html`, `admin.html`) and select **"Open with Live Server"**.
+3. Right-click on `public/index.html` (or `mobile.html`) and select **"Open with Live Server"**.
 
 **Method 2: Simple Local Server**
 If you have Node.js or Python installed, you can serve the `public/` directory:
